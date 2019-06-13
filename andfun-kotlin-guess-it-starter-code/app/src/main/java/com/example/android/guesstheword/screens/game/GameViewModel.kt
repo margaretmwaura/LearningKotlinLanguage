@@ -31,6 +31,7 @@ class GameViewModel:ViewModel()
     lateinit var wordList: MutableList<String>
 
     private val timer : CountDownTimer
+
     private val _time = MutableLiveData<Long>()
     val time : LiveData<Long> get() = _time
 
@@ -41,7 +42,7 @@ class GameViewModel:ViewModel()
         resetList()
         nextWord()
         _score.value = 0
-     
+
 
         timer = object : CountDownTimer(COUNTDOWN_TIME, ONE_SECOND) {
 
