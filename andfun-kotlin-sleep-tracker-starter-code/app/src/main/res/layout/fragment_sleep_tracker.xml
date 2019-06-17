@@ -76,7 +76,8 @@
             app:layout_constraintBaseline_toBaselineOf="@id/stop_button"
             app:layout_constraintEnd_toStartOf="@+id/stop_button"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:enabled="@{sleepViewModel.startButtonVisible}"/>
 
         <Button
             android:id="@+id/stop_button"
@@ -89,7 +90,9 @@
             android:onClick="@{()-> sleepViewModel.onStopTacking()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/start_button"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:enabled="@{sleepViewModel.stopButtonVisible}"
+            />
 
         <Button
             android:id="@+id/clear_button"
@@ -103,7 +106,8 @@
             android:onClick="@{() -> sleepViewModel.onClear()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:enabled="@{sleepViewModel.clearButtonVisible}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
