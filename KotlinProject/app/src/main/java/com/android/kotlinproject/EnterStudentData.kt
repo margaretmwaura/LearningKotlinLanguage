@@ -1,7 +1,11 @@
 package com.android.kotlinproject
 
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -22,6 +26,8 @@ class EnterStudentData : AppCompatActivity() {
         //Now setting up the data binding
         val binding : ActivityEnterStudentDataBinding = DataBindingUtil.setContentView(this,R.layout.activity_enter_student_data)
 
+        registerNotificationChannel()
+
         var name : String = " "
         var marks : Int
         val myStudent : Student = Student()
@@ -39,6 +45,7 @@ class EnterStudentData : AppCompatActivity() {
 
         binding.enterStudentData.setOnClickListener {
 
+            NewMessageNotification.notify(this@EnterStudentData,"Entering", "Student data has beem entered", 1)
             name = student_name.text.toString()
             marks = Integer.parseInt(student_marks.text.toString())
 
@@ -51,5 +58,16 @@ class EnterStudentData : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun registerNotificationChannel()
+    {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            val nm = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val channel = NotificationChannel(NewMessageNotification.REMINDER_CHANENEL,"Enter data reminder" , NotificationManager.IMPORTANCE_DEFAULT)
+
+            nm.createNotificationChannel(channel)
+        }
     }
 }
