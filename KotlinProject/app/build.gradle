@@ -61,6 +61,10 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutine"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutine"
 
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-auth:18.1.0'
+    implementation 'com.github.ajalt:timberkt:1.5.1'
 
 
 }
+apply plugin: 'com.google.gms.google-services'
