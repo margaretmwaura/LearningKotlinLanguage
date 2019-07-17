@@ -36,7 +36,7 @@ class Authentication : AppCompatActivity()
                       Timber.e("Creating a user was successfule")
                         val user = auth.currentUser
 
-                        val intent = Intent(this@Authentication, MainActivity::class.java)
+                        val intent = Intent(this@Authentication, EnterStudentData::class.java)
                         startActivity(intent)
 
                     } else {

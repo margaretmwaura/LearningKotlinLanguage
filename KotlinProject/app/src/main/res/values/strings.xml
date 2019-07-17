@@ -2,4 +2,19 @@
     <string name="app_name">KotlinProject</string>
     <string name="email">email</string>
     <string name="password">password</string>
+    <string name="title_activity_drawer">drawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">This is the welcome fragment that is inside the Welcome activity</string>
+    <string name="authenticate">This is the authentication fragment</string>
+    <string name="welcome_button">start authentication</string>
+    <string name="fail">Authentication Failed</string>
+    <string name="success">Authentication was successful</string>
 </resources>
