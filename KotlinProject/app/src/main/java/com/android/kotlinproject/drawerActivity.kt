@@ -8,6 +8,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.navigation.navArgs
 import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.app_bar_drawer.*
 
@@ -17,6 +19,8 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer)
         setSupportActionBar(toolbar)
+
+        Toast.makeText(this,"This is the email : ${Welcom.emailGiven()}" , Toast.LENGTH_LONG).show()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -82,4 +86,6 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+
 }

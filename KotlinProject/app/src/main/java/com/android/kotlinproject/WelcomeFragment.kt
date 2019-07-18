@@ -22,7 +22,7 @@ class WelcomeFragment : Fragment()
         val binding : FragmentWelcomeBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_welcome,container,false)
         // Inflate the layout for this fragment
         binding.startAuthentication.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_welcomeFragment_to_authenticationFragment)
+            Navigation.findNavController(it).navigate(WelcomeFragmentDirections.actionWelcomeFragmentToAuthenticationFragment())
 //            Changed to
 //            it.findNavController().navigate(pass the id )
 //            changes to

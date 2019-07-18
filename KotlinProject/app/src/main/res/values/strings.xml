@@ -17,4 +17,7 @@
     <string name="welcome_button">start authentication</string>
     <string name="fail">Authentication Failed</string>
     <string name="success">Authentication was successful</string>
+    <string name="create_account">Create Account</string>
+    <string name="student_name">student name</string>
+    <string name="student_marks">student marks</string>
 </resources>
