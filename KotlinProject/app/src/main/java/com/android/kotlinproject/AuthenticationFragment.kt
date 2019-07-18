@@ -44,7 +44,7 @@ class AuthenticationFragment : Fragment() {
                         Timber.e("Creating a user was successfule")
                         val user = auth.currentUser
                         sendData(email)
-                        it.findNavController().navigate(AuthenticationFragmentDirections.actionAuthenticationFragmentToDrawerActivity())
+                        it.findNavController().navigate(AuthenticationFragmentDirections.actionAuthenticationFragmentToAuthenticationSuccessful())
 
 
                     } else {

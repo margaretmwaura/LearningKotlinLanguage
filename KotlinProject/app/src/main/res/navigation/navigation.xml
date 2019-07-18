@@ -13,12 +13,14 @@
         <action android:id="@+id/action_authenticationFragment_to_authenticationFailed"
                 app:destination="@id/authenticationFailed" app:popUpTo="@+id/authenticationFragment"
                 app:popUpToInclusive="true"/>
-        <action android:id="@+id/action_authenticationFragment_to_drawerActivity" app:destination="@id/drawerActivity"/>
+        <action android:id="@+id/action_authenticationFragment_to_authenticationSuccessful"
+                app:destination="@id/authenticationSuccessful"/>
     </fragment>
     <fragment android:id="@+id/authenticationFailed" android:name="com.android.kotlinproject.AuthenticationFailed"
               android:label="fragment_authentication_failed" tools:layout="@layout/fragment_authentication_failed">
         <argument android:name="email" app:argType="string"/>
     </fragment>
-    <activity android:id="@+id/drawerActivity" android:name="com.android.kotlinproject.drawerActivity"
-              android:label="content_drawer" tools:layout="@layout/content_drawer"/>
+    <fragment android:id="@+id/authenticationSuccessful"
+              android:name="com.android.kotlinproject.AuthenticationSuccessful"
+              android:label="AuthenticationSuccessful"/>
 </navigation>

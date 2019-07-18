@@ -56,7 +56,7 @@ class AuthenticationSuccessful : Fragment() {
             myStudent.name = name
             studentViewModelInstance.onCreateNewStudent(myStudent)
 
-            val intent = Intent(activity, MainActivity::class.java)
+            val intent = Intent(activity, drawerActivity::class.java)
             startActivity(intent)
 
         }

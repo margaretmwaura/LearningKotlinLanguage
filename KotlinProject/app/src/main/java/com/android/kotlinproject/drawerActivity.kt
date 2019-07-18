@@ -1,5 +1,6 @@
 package com.android.kotlinproject
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -8,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.navArgs
 import kotlinx.android.synthetic.main.activity_drawer.*
@@ -15,12 +17,15 @@ import kotlinx.android.synthetic.main.app_bar_drawer.*
 
 class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var email : String
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer)
         setSupportActionBar(toolbar)
 
         Toast.makeText(this,"This is the email : ${Welcom.emailGiven()}" , Toast.LENGTH_LONG).show()
+        email = Welcom.emailGiven()
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -33,6 +38,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+        val h_view = nav_view.getHeaderView(0)
+        val textView = h_view.findViewById(R.id.textView_email_user) as TextView
+        textView.text = email
         nav_view.setNavigationItemSelectedListener(this)
     }
 
@@ -63,8 +71,11 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
+            R.id.nav_camera ->
+            {
                 // Handle the camera action
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_gallery -> {
 
