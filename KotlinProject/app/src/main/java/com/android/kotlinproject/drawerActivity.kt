@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.navArgs
 import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.app_bar_drawer.*
@@ -74,8 +75,12 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_camera ->
             {
                 // Handle the camera action
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, MainActivity::class.java)
+//                startActivity(intent)
+                val expenseFragment = ExpenseFragment()
+                val fragmenttransaction = supportFragmentManager.beginTransaction()
+                fragmenttransaction.replace(R.id.container_layout,expenseFragment)
+                fragmenttransaction.commit()
             }
             R.id.nav_gallery -> {
 

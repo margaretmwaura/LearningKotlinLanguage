@@ -18,3 +18,31 @@ fun TextView.setStudentMarks(item : Student?)
         text = item.marks.toString()
     }
 }
+@BindingAdapter("GivenExpenseName")
+fun TextView.setExpenseName(item : Expense?)
+{
+    item?.let {
+        text = item.name
+    }
+}
+@BindingAdapter("GivenExpenseAmount")
+fun TextView.setExpenseAmount(item : Expense?)
+{
+    item?.let {
+        text = item.amount.toString()
+    }
+}
+@BindingAdapter("GivenExpenseDate")
+fun TextView.setExpenseDate(item : Expense?)
+{
+    item?.let {
+        text = item.expenseDate
+    }
+}
+@BindingAdapter("GivenStudentMarks")
+fun TextView.setExpenseDetails(item : Expense?)
+{
+    item?.let {
+        text = item.details
+    }
+}

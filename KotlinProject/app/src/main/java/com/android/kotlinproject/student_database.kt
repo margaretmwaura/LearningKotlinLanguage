@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Student :: class] , version = 1 , exportSchema = false)
+@Database(entities = [Student :: class , Expense :: class] , version = 1 , exportSchema = false)
 abstract class student_database: RoomDatabase()
 {
 

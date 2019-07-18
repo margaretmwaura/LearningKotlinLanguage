@@ -13,4 +13,10 @@ interface dao_interface
 
     @Query( "SELECT * FROM Student")
     fun getAllStudents() : LiveData<List<Student>>
+
+    @Insert
+    fun insertExpense(my_expense : Expense)
+
+    @Query( "SELECT * FROM expense")
+    fun getExpenses() : LiveData<List<Expense>>
 }
