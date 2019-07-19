@@ -3,7 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="income"
-                  type="com.android.kotlinproject.Income"/>
+                  type="com.android.kotlinproject.Model.Income"/>
     </data>
     <LinearLayout
             android:orientation="vertical"

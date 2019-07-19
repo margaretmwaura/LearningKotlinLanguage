@@ -4,7 +4,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="myExpenseViewModel"
-                  type="com.android.kotlinproject.ExpenseViewModel"/>
+                  type="com.android.kotlinproject.Presenter.ExpenseViewModel"/>
     </data>
     <RelativeLayout
             android:layout_width="match_parent"

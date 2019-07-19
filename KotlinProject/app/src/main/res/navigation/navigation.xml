@@ -3,12 +3,12 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation" app:startDestination="@id/welcomeFragment">
 
-    <fragment android:id="@+id/welcomeFragment" android:name="com.android.kotlinproject.WelcomeFragment"
+    <fragment android:id="@+id/welcomeFragment" android:name="com.android.kotlinproject.View.WelcomeFragment"
               android:label="WelcomeFragment">
         <action android:id="@+id/action_welcomeFragment_to_authenticationFragment"
                 app:destination="@id/authenticationFragment"/>
     </fragment>
-    <fragment android:id="@+id/authenticationFragment" android:name="com.android.kotlinproject.AuthenticationFragment"
+    <fragment android:id="@+id/authenticationFragment" android:name="com.android.kotlinproject.View.AuthenticationFragment"
               android:label="fragment_authentication" tools:layout="@layout/fragment_authentication">
         <action android:id="@+id/action_authenticationFragment_to_authenticationFailed"
                 app:destination="@id/authenticationFailed" app:popUpTo="@+id/authenticationFragment"
@@ -16,11 +16,11 @@
         <action android:id="@+id/action_authenticationFragment_to_authenticationSuccessful"
                 app:destination="@id/authenticationSuccessful"/>
     </fragment>
-    <fragment android:id="@+id/authenticationFailed" android:name="com.android.kotlinproject.AuthenticationFailed"
+    <fragment android:id="@+id/authenticationFailed" android:name="com.android.kotlinproject.View.AuthenticationFailed"
               android:label="fragment_authentication_failed" tools:layout="@layout/fragment_authentication_failed">
         <argument android:name="email" app:argType="string"/>
     </fragment>
     <fragment android:id="@+id/authenticationSuccessful"
-              android:name="com.android.kotlinproject.AuthenticationSuccessful"
+              android:name="com.android.kotlinproject.View.AuthenticationSuccessful"
               android:label="AuthenticationSuccessful"/>
 </navigation>

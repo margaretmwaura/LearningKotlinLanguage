@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 
 import android.content.Intent
@@ -10,7 +10,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.android.kotlinproject.Presenter.IncomeViewModel
+import com.android.kotlinproject.Presenter.IncomeViewModelFactory
+import com.android.kotlinproject.Model.IncomeAdapter
+import com.android.kotlinproject.R
 import com.android.kotlinproject.databinding.FragmentIncomeBinding
+import com.android.kotlinproject.Model.student_database
 import timber.log.Timber
 
 class IncomeFragment : Fragment() {
@@ -20,11 +25,13 @@ class IncomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View?
     {
-        val binding : FragmentIncomeBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_income,container,false)
+        val binding : FragmentIncomeBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_income,container,false)
         val application = requireNotNull(activity).application
         val dataScource = student_database.getInstance(application).dao_interface_interface
 
-        val incomeViewModelFactoryInstance = IncomeViewModelFactory(dataScource,application)
+        val incomeViewModelFactoryInstance =
+            IncomeViewModelFactory(dataScource, application)
         val incomeViewModelInstance = ViewModelProviders.of(this,incomeViewModelFactoryInstance).get(IncomeViewModel::class.java)
         binding.myIncomeViewModel = incomeViewModelInstance
         val incomeadapter = IncomeAdapter()
@@ -38,7 +45,7 @@ class IncomeFragment : Fragment() {
 
         binding.fabAddIncome.setOnClickListener {
 
-            val intent = Intent(context,EnterIncome::class.java)
+            val intent = Intent(context, EnterIncome::class.java)
             startActivity(intent)
         }
 

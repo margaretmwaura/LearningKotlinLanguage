@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 
 import android.content.Intent
@@ -10,7 +10,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.android.kotlinproject.Presenter.ExpenseViewModel
+import com.android.kotlinproject.Presenter.ExpenseViewModelFactory
+import com.android.kotlinproject.Model.ExpenseAdapter
+import com.android.kotlinproject.R
 import com.android.kotlinproject.databinding.FragmentExpenseBinding
+import com.android.kotlinproject.Model.student_database
 import timber.log.Timber
 
 class ExpenseFragment : Fragment() {
@@ -21,10 +26,12 @@ class ExpenseFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val binding : FragmentExpenseBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_expense,container,false)
+        val binding : FragmentExpenseBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_expense,container,false)
         val application = requireNotNull(activity).application
         val dataScource = student_database.getInstance(application).dao_interface_interface
-        val expenseViewModelFactoryInstance = ExpenseViewModelFactory(dataScource,application)
+        val expenseViewModelFactoryInstance =
+            ExpenseViewModelFactory(dataScource, application)
 
         val expenseViewModel = ViewModelProviders.of(this,expenseViewModelFactoryInstance).get(ExpenseViewModel::class.java)
         binding.myExpenseViewModel = expenseViewModel
@@ -40,7 +47,7 @@ class ExpenseFragment : Fragment() {
 
         binding.fab.setOnClickListener {
 
-            val intent = Intent(context,EnterExpense::class.java)
+            val intent = Intent(context, EnterExpense::class.java)
             startActivity(intent)
         }
         return binding.root

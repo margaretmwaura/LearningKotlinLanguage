@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Model
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -15,13 +15,13 @@ class IncomeAdapter : ListAdapter<Income,RecyclerView.ViewHolder>(IncomeDiffCall
         {
             var layoutInflater = LayoutInflater.from(parent.context)
         val binding = IncomeItemBinding.inflate(layoutInflater,parent,false)
-        return IncomeAdapter.viewHolder(binding)
+        return viewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int)
     {
        var myIncome : Income = getItem(position)
-        (holder as IncomeAdapter.viewHolder).bind(myIncome)
+        (holder as viewHolder).bind(myIncome)
     }
 
     class viewHolder(val binding: IncomeItemBinding) : RecyclerView.ViewHolder(binding.root)

@@ -6,13 +6,13 @@
 
     <data>
         <variable name="myStudentViewModel"
-                  type="com.android.kotlinproject.StudentViewModel"/>
+                  type="com.android.kotlinproject.Presenter.StudentViewModel"/>
     </data>
 <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".View.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_marginTop="200dp"

@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 
 import android.app.NotificationChannel
@@ -15,8 +15,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
+import com.android.kotlinproject.*
+import com.android.kotlinproject.Model.Student
+import com.android.kotlinproject.Model.student_database
+import com.android.kotlinproject.Presenter.NewMessageNotification
+import com.android.kotlinproject.Presenter.StudentViewModel
+import com.android.kotlinproject.Presenter.StudentViewModelFactory
 import com.android.kotlinproject.databinding.FragmentAuthenticationSuccessfulBinding
-
 
 
 class AuthenticationSuccessful : Fragment() {
@@ -27,7 +32,8 @@ class AuthenticationSuccessful : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val binding : FragmentAuthenticationSuccessfulBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_authentication_successful,container,false)
+        val binding : FragmentAuthenticationSuccessfulBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_authentication_successful,container,false)
 
         registerNotificationChannel()
 
@@ -39,7 +45,8 @@ class AuthenticationSuccessful : Fragment() {
 //        Setting up the viewModel
         val application = requireNotNull(activity).application
         val dataScource = student_database.getInstance(application).dao_interface_interface
-        val studentViewModelFactoryInstance = StudentViewModelFactory(dataScource,application)
+        val studentViewModelFactoryInstance =
+            StudentViewModelFactory(dataScource, application)
 
         val studentViewModelInstance = ViewModelProviders.of(activity as FragmentActivity,
             studentViewModelFactoryInstance).get(StudentViewModel::class.java)
@@ -48,7 +55,12 @@ class AuthenticationSuccessful : Fragment() {
 
         binding.buttonAddStudent.setOnClickListener {
 
-            NewMessageNotification.notify(activity as FragmentActivity,"Entering", "Student data has beem entered", 1)
+            NewMessageNotification.notify(
+                activity as FragmentActivity,
+                "Entering",
+                "Student data has beem entered",
+                1
+            )
             name = binding.editTextStudentName.text.toString()
             marks = Integer.parseInt(binding.editTextStudentMarks.text.toString())
 

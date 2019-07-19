@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Presenter
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

@@ -1,7 +1,10 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Presenter
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.android.kotlinproject.Model.Expense
+import com.android.kotlinproject.Model.Income
+import com.android.kotlinproject.Model.Student
 
 @BindingAdapter("GivenStudentName")
 fun TextView.setStudentName(item : Student?)

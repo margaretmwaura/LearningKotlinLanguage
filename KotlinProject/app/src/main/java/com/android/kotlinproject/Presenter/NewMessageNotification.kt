@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Presenter
 
 import android.annotation.TargetApi
 import android.app.Notification
@@ -7,12 +7,10 @@ import android.app.PendingIntent
 import android.app.TaskStackBuilder
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Build
 import androidx.core.app.NotificationCompat
+import com.android.kotlinproject.R
+import com.android.kotlinproject.View.MainActivity
 
 /**
  * Helper class for showing and canceling new message
@@ -65,7 +63,9 @@ object NewMessageNotification {
         val res = context.resources
 
 
-        val builder = NotificationCompat.Builder(context, REMINDER_CHANENEL)
+        val builder = NotificationCompat.Builder(context,
+            REMINDER_CHANENEL
+        )
 
             // Set appropriate defaults for the notification light, sound,
             // and vibration.

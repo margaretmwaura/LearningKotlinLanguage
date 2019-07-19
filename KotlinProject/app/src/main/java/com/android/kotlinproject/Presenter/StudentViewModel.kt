@@ -1,10 +1,11 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Presenter
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.android.kotlinproject.Model.Student
+import com.android.kotlinproject.Presenter.dao_interface
 import kotlinx.coroutines.*
 
 class StudentViewModel(val database : dao_interface, application: Application ) : AndroidViewModel(application)
@@ -37,7 +38,7 @@ class StudentViewModel(val database : dao_interface, application: Application ) 
 
     }
 
-    private suspend fun insert(myStudent: Student )
+    private suspend fun insert(myStudent: Student)
     {
         withContext(Dispatchers.IO)
         {

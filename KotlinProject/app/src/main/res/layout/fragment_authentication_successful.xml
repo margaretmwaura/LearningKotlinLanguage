@@ -3,12 +3,12 @@
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="myStudentViewModel"
-                  type="com.android.kotlinproject.StudentViewModel"/>
+                  type="com.android.kotlinproject.Presenter.StudentViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".AuthenticationSuccessful">
+            tools:context=".View.AuthenticationSuccessful">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView

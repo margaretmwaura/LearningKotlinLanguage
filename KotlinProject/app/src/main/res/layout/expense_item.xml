@@ -3,7 +3,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="expense"
-                  type="com.android.kotlinproject.Expense"/>
+                  type="com.android.kotlinproject.Model.Expense"/>
     </data>
     <LinearLayout
             android:orientation="vertical"

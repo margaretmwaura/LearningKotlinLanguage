@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 
 import android.os.Bundle
@@ -8,7 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import com.android.kotlinproject.R
+import com.android.kotlinproject.WelcomeFragmentDirections
 import com.android.kotlinproject.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment()
@@ -19,7 +20,8 @@ class WelcomeFragment : Fragment()
         savedInstanceState: Bundle?
     ): View?
     {
-        val binding : FragmentWelcomeBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_welcome,container,false)
+        val binding : FragmentWelcomeBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_welcome,container,false)
         // Inflate the layout for this fragment
         binding.startAuthentication.setOnClickListener {
             Navigation.findNavController(it).navigate(WelcomeFragmentDirections.actionWelcomeFragmentToAuthenticationFragment())

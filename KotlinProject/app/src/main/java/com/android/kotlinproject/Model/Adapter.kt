@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Model
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

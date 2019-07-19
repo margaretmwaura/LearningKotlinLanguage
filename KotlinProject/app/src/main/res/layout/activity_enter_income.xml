@@ -3,12 +3,12 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable name="myIncomeViewModel"
-                  type="com.android.kotlinproject.IncomeViewModel"/>
+                  type="com.android.kotlinproject.Presenter.IncomeViewModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".EnterIncome">
+            tools:context=".View.EnterIncome">
 
         <EditText
                 android:text="TextView"

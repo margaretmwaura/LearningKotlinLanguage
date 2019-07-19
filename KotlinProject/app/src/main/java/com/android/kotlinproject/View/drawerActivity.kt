@@ -1,8 +1,7 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,8 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.navArgs
+import com.android.kotlinproject.*
 import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.app_bar_drawer.*
 
@@ -30,7 +28,9 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
 
         val toggle = ActionBarDrawerToggle(
-            this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+            this, drawer_layout, toolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
         )
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
@@ -87,7 +87,7 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
             R.id.nav_slideshow ->
             {
-                val intent = Intent(this@drawerActivity,MainActivity::class.java)
+                val intent = Intent(this@drawerActivity, MainActivity::class.java)
                 startActivity(intent)
 
             }

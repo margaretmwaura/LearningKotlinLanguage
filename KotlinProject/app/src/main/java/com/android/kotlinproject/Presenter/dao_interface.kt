@@ -1,9 +1,12 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Presenter
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.android.kotlinproject.Model.Expense
+import com.android.kotlinproject.Model.Income
+import com.android.kotlinproject.Model.Student
 
 @Dao
 interface dao_interface

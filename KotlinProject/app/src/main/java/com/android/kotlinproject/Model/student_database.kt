@@ -1,11 +1,12 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Model
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.android.kotlinproject.Presenter.dao_interface
 
-@Database(entities = [Student :: class , Expense :: class , Income::class] , version = 1 , exportSchema = false)
+@Database(entities = [Student:: class , Expense:: class , Income::class] , version = 1 , exportSchema = false)
 abstract class student_database: RoomDatabase()
 {
 
@@ -27,7 +28,7 @@ abstract class student_database: RoomDatabase()
                     instance = Room.databaseBuilder(
 
                         context.applicationContext,
-                        student_database :: class.java,
+                        student_database:: class.java,
                         "student database"
                     )
                         .fallbackToDestructiveMigration()

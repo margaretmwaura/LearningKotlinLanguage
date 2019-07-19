@@ -1,17 +1,23 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProviders
+import com.android.kotlinproject.*
+import com.android.kotlinproject.Model.Expense
+import com.android.kotlinproject.Model.student_database
+import com.android.kotlinproject.Presenter.ExpenseViewModel
+import com.android.kotlinproject.Presenter.ExpenseViewModelFactory
 import com.android.kotlinproject.databinding.ActivityEnterExpenseBinding
 
 class EnterExpense : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding : ActivityEnterExpenseBinding = DataBindingUtil.setContentView(this,R.layout.activity_enter_expense)
+        val binding : ActivityEnterExpenseBinding = DataBindingUtil.setContentView(this,
+            R.layout.activity_enter_expense
+        )
 
         var expenseName : String = " "
         var expenseDate : String = " "
@@ -23,7 +29,8 @@ class EnterExpense : AppCompatActivity() {
         //        Setting up the viewModel
         val application = requireNotNull(this).application
         val dataScource = student_database.getInstance(application).dao_interface_interface
-        val expenseViewModelFactoryInstamce = ExpenseViewModelFactory(dataScource,application)
+        val expenseViewModelFactoryInstamce =
+            ExpenseViewModelFactory(dataScource, application)
 
         val expenseViewModelInstance = ViewModelProviders.of(this,
             expenseViewModelFactoryInstamce).get(ExpenseViewModel::class.java)

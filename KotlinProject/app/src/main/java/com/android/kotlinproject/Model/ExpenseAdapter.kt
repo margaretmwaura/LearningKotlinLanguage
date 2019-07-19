@@ -1,4 +1,4 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Model
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,23 +7,22 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.android.kotlinproject.databinding.ExpenseItemBinding
-import com.android.kotlinproject.databinding.MonthItemBinding
 
-class ExpenseAdapter : ListAdapter<Expense , RecyclerView.ViewHolder>(ExpenseDiffCallBack())
+class ExpenseAdapter : ListAdapter<Expense, RecyclerView.ViewHolder>(ExpenseDiffCallBack())
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
     {
         var layoutInflater = LayoutInflater.from(parent.context)
         val binding  = ExpenseItemBinding.inflate(layoutInflater,parent,false)
 
-        return ExpenseAdapter.viewHolder(binding)
+        return viewHolder(binding)
 
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int)
     {
         var myExpense : Expense = getItem(position)
-        (holder as ExpenseAdapter.viewHolder).bind(myExpense)
+        (holder as viewHolder).bind(myExpense)
     }
 
     class viewHolder(val binding: ExpenseItemBinding) : RecyclerView.ViewHolder(binding.root)

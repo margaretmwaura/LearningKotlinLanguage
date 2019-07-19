@@ -1,18 +1,19 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 
 import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.android.kotlinproject.AuthenticationFragmentDirections
+import com.android.kotlinproject.R
 import com.android.kotlinproject.databinding.FragmentAuthenticationBinding
+import com.android.kotlinproject.Presenter.fragmentToActivity
 import com.google.firebase.auth.FirebaseAuth
 import timber.log.Timber
 
@@ -32,7 +33,8 @@ class AuthenticationFragment : Fragment() {
         var password : String = " "
 
         // Inflate the layout for this fragment
-        val binding : FragmentAuthenticationBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_authentication,container,false)
+        val binding : FragmentAuthenticationBinding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_authentication,container,false)
 
         binding.button.setOnClickListener {
             email = binding.editTextEmail.text.toString()
@@ -50,7 +52,11 @@ class AuthenticationFragment : Fragment() {
                     } else {
                         // If sign in fails, display a message to the user.
                         Timber.e("Error creating a user")
-                        it.findNavController().navigate(AuthenticationFragmentDirections.actionAuthenticationFragmentToAuthenticationFailed(email))
+                        it.findNavController().navigate(
+                            AuthenticationFragmentDirections.actionAuthenticationFragmentToAuthenticationFailed(
+                                email
+                            )
+                        )
                     }
 
                     }

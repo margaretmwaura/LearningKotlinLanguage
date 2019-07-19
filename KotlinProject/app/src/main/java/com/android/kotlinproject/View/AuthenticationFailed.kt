@@ -1,13 +1,13 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.android.kotlinproject.AuthenticationFailedArgs
+import com.android.kotlinproject.R
 
 class AuthenticationFailed : Fragment() {
 

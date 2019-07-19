@@ -1,23 +1,25 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.Presenter
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.android.kotlinproject.Model.Income
+import com.android.kotlinproject.Presenter.dao_interface
 import kotlinx.coroutines.*
 
-class ExpenseViewModel (val database : dao_interface , application: Application) : AndroidViewModel(application)
+class IncomeViewModel (val database : dao_interface, application: Application) : AndroidViewModel(application)
 {
 
 
     //    This is needed by the couroutines
     public var viewModelJob = Job()
-    public var myExpense = MutableLiveData<Expense?>()
-    public var expenseList = database.getExpenses()
+    public var myIncome = MutableLiveData<Income?>()
+    public var incomeList = database.getIncome()
 
     //    This is the block to be executed first
     init {
-        Log.i("ExpenseModel","ViewModel created");
+        Log.i("IncomeViewModel","ViewModel created");
     }
 
     //The scope determines what thread the couroutine will run on
@@ -26,21 +28,21 @@ class ExpenseViewModel (val database : dao_interface , application: Application)
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
 
-    fun onCreateNewExpense( mynewExpense : Expense)
+    fun onCreateNewIncome( myNewIncome : Income)
     {
         uiScope.launch {
 
-            insert(mynewExpense)
+            insertIncome(myNewIncome)
 
         }
 
     }
 
-    private suspend fun insert(myExpense: Expense )
+    private suspend fun insertIncome(myNewIncome: Income)
     {
         withContext(Dispatchers.IO)
         {
-            database.insertExpense(myExpense)
+            database.insertIncome(myNewIncome)
             Log.i("add","Student has been added")
         }
     }

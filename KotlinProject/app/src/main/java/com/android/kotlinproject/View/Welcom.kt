@@ -1,15 +1,15 @@
-package com.android.kotlinproject
+package com.android.kotlinproject.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.android.kotlinproject.Presenter.fragmentToActivity
+import com.android.kotlinproject.R
 import com.android.kotlinproject.databinding.ActivityWelcomBinding
-import com.github.ajalt.timberkt.Timber
 
-class Welcom : AppCompatActivity() , fragmentToActivity{
+class Welcom : AppCompatActivity() , fragmentToActivity {
 
 
     companion object
@@ -24,7 +24,9 @@ class Welcom : AppCompatActivity() , fragmentToActivity{
     {
         super.onCreate(savedInstanceState)
 
-        val binding : ActivityWelcomBinding = DataBindingUtil.setContentView(this,R.layout.activity_welcom)
+        val binding : ActivityWelcomBinding = DataBindingUtil.setContentView(this,
+            R.layout.activity_welcom
+        )
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this,navController)
 
