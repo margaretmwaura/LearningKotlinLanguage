@@ -40,7 +40,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.306"/>
+                app:layout_constraintVertical_bias="0.204"/>
         <EditText
                 android:text="TextView"
                 android:layout_width="wrap_content"
@@ -50,12 +50,12 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="356dp"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintHorizontal_bias="0.455"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.054"/>
+                app:layout_constraintVertical_bias="0.379"/>
         <EditText
                 android:text="TextView"
                 android:layout_width="wrap_content"
@@ -65,12 +65,12 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="520dp"
+                android:layout_marginTop="52dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintHorizontal_bias="0.455"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.0"/>
+                app:layout_constraintVertical_bias="0.488"/>
         <Button
                 android:text="Enter expense"
                 android:layout_width="wrap_content"
@@ -82,10 +82,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="64dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.465"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.986"/>
+                app:layout_constraintVertical_bias="0.7"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

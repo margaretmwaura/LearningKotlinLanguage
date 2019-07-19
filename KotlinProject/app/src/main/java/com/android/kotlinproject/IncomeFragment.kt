@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.android.kotlinproject.databinding.FragmentIncomeBinding
+import timber.log.Timber
 
 class IncomeFragment : Fragment() {
 
@@ -32,6 +33,7 @@ class IncomeFragment : Fragment() {
         incomeViewModelInstance.incomeList.observe(this, Observer {
 
             incomeadapter.submitList(it)
+            Timber.d("This is the size of the list : ${it.size}")
         })
 
         binding.fabAddIncome.setOnClickListener {

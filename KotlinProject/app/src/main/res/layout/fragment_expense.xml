@@ -6,7 +6,7 @@
         <variable name="myExpenseViewModel"
                   type="com.android.kotlinproject.ExpenseViewModel"/>
     </data>
-    <LinearLayout
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -17,6 +17,7 @@
                 android:id="@+id/recyclerview_expense"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:text="@string/hello_blank_fragment"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -25,7 +26,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
                 app:srcCompat="@android:drawable/ic_dialog_email"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>

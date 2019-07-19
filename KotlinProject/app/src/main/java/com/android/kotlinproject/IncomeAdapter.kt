@@ -12,8 +12,8 @@ import com.android.kotlinproject.databinding.IncomeItemBinding
 class IncomeAdapter : ListAdapter<Income,RecyclerView.ViewHolder>(IncomeDiffCallBack())
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
-    {
-       var layoutInflater = LayoutInflater.from(parent.context)
+        {
+            var layoutInflater = LayoutInflater.from(parent.context)
         val binding = IncomeItemBinding.inflate(layoutInflater,parent,false)
         return IncomeAdapter.viewHolder(binding)
     }

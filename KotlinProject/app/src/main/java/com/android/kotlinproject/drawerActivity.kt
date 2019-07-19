@@ -28,10 +28,6 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         Toast.makeText(this,"This is the email : ${Welcom.emailGiven()}" , Toast.LENGTH_LONG).show()
         email = Welcom.emailGiven()
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
