@@ -82,10 +82,17 @@ class drawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 fragmenttransaction.replace(R.id.container_layout,expenseFragment)
                 fragmenttransaction.commit()
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_gallery ->
+            {
+                val incomeFragment = IncomeFragment()
+                val fragmenttransaction = supportFragmentManager.beginTransaction()
+                fragmenttransaction.replace(R.id.container_layout,incomeFragment)
+                fragmenttransaction.commit()
             }
-            R.id.nav_slideshow -> {
+            R.id.nav_slideshow ->
+            {
+                val intent = Intent(this@drawerActivity,MainActivity::class.java)
+                startActivity(intent)
 
             }
             R.id.nav_manage -> {

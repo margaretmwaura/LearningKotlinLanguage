@@ -46,3 +46,24 @@ fun TextView.setExpenseDetails(item : Expense?)
         text = item.details
     }
 }
+@BindingAdapter("GivenIcomeName")
+fun TextView.setIncomeName(item : Income?)
+{
+    item?.let {
+        text = item.name
+    }
+}
+@BindingAdapter("GivenIncomeAmount")
+fun TextView.setIncomeAmount(item : Income?)
+{
+    item?.let {
+        text = item.amount.toString()
+    }
+}
+@BindingAdapter("GivenIncomeDate")
+fun TextView.setIncomeDate(item : Income?)
+{
+    item?.let {
+        text = item.incomeDate
+    }
+}
